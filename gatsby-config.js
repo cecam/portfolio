@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "portfolio",
+    siteUrl: 'https://festive-euclid-2f3b1c.netlify.app'
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -8,14 +9,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "/images/",
-      },
-      __key: "images",
-    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
