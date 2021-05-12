@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: $title, cursive;
+}
+
+p, li {
+    font-family: $text, sans-serif;
+}
+
+.hero {
+    background-image: url(../../public/images/hero-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .content-section {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        align-items: center;
+        grid-gap: 10px;
+        width: 70%;
+
+        .presentation-card {
+            text-align: center;
+            border-radius: 15px;
+            padding: 1vh 0;
+            background-color: white;
+            
+            img {
+                width: 60%;
+                clip-path: circle(50% at 50% 50%);
+                object-fit: contain;
+            }
+
+            .card-header {
+                padding: 1vh 0;
+
+                h1 {
+                    font-size: 25px;
+                    color: $dark-blue;
+                }
+                p {
+                    font-size: 20px;
+                    color: $light-blue;
+                }
+            }
+
+            .info {
+                background-color: $grey;
+                margin: 1vh 0;
+                padding: 15px 25px;
+                text-align: left;
+
+                p {
+                    color: $dark-grey;
+                    padding: 5px 0;
+                }
+            }
+
+            button {
+                font-size: large;
+                margin: 1vh 0;
+                cursor: pointer;
+                @include buttons;
+            }
+        }
+
+        @media (max-width: 850px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 45% 1fr;
+            width: 80%;
+            height: 100vh;
+
+            .presentation-card {
+                img {
+                    width: 30%;
+                }
+            }
+        }
+    }
+
+    .personal-info {
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px 0;
+        
+        .header {
+            padding: 0 15px;
+
+            h2 {
+                font-size: 23px;
+                color: $light-blue;
+                border-bottom: solid 3px $dark-blue
+            }
+
+            p {
+                color: $dark-grey;
+                padding: 10px 0;
+                text-align: initial;
+            }
+
+            ul {
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+                padding: 0 5% 10px 5%;
+                color: $dark-grey;
+            }
+        }
+
+        .skills {
+            background-color: $grey;
+
+            &__tech {
+                padding: 10px 10px;
+
+                h3 {
+                    color: $light-blue;
+                    width: 30%;
+                    border-bottom: solid 2px $light-blue;
+                }
+
+                .tech-list {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    padding: 10px 25px;
+
+                    .tech-element {
+                        display: flex;                        
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 10px;
+                        font-size: 25px;
+                        cursor: none;
+                        transition: ease .3s;
+
+                        &:hover {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .React {
+                        color: #04d8fa;
+                    }
+
+                    .Gatsby {
+                        color: #663399;
+                    }
+
+                    .Sass {
+                        color: #cd6799;
+                    }
+
+                    .CSS3 {
+                        color: #2965f1;
+                    }
+
+                    .git {
+                        color: #f1502f;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 850px) {
+            .header ul {
+                justify-content: space-between;
+            }
+
+            .skills {
+                &__tech {
+                    .tech-list {
+                        .tech-element {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 850px) {
+        height: 105vh;   
+    }
+}
+
+.contact-button {
+    position: absolute;
+    bottom: 50px;
+    padding: 10px 40px;
+    border: none;
+    background-color: #b45b6f;
+    font-family: $title;
+    font-size: 22px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    @media (max-width: 850px) {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+@mixin title-format {
+    font-size: 5vh;
+    color: $light-blue;
+    border-bottom: 3px solid $dark-blue;
+    max-width: 40%;
+}
+
+@mixin section-format {
+    min-height: 50vh;
+    padding: 25px 20px;
+} 
+
+@mixin buttons {
+    background-color: $dark-blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: $title;
+    padding: 10px 25px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
